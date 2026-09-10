@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0b0b0b">
+    <meta name="description" content="Chopp do Urso - Chopp gelado, espetinhos e muita resenha.">
+
+    <title>Chopp do Urso | Chopp & Espetinhos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container nav">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">🐻</span>
+                <span>CHOPP<br><b>DO URSO</b></span>
+            </a>
+
+            <nav class="menu">
+                <a href="#inicio">Início</a>
+                <a href="#cardapio">Cardápio</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <a href="#cardapio" class="header-button">
+                PEDIR AGORA
+            </a>
+
+            <button class="menu-mobile" onclick="abrirMenu()">
+                ☰
+            </button>
+        </div>
+    </header>
+
+
+    <!-- MENU MOBILE -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button onclick="fecharMenu()">✕</button>
+
+        <a href="#inicio" onclick="fecharMenu()">Início</a>
+        <a href="#cardapio" onclick="fecharMenu()">Cardápio</a>
+        <a href="#sobre" onclick="fecharMenu()">Sobre</a>
+        <a href="#contato" onclick="fecharMenu()">Contato</a>
+    </div>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-glow"></div>
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <span class="tag">
+                        🍺 CHOPP GELADO • ESPETINHOS • RESENHA
+                    </span>
+
+                    <h1>
+                        AQUI A RESENHA
+                        <span>COMEÇA GELADA</span>
+                    </h1>
+
+                    <p>
+                        Chopp trincando, espetinhos na brasa e aquele ambiente
+                        perfeito para reunir a galera.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#cardapio" class="primary-button">
+                            VER CARDÁPIO →
+                        </a>
+
+                        <a href="#sobre" class="secondary-button">
+                            CONHEÇA O URSO
+                        </a>
+                    </div>
+
+                    <div class="hero-info">
+                        <div>
+                            <strong>🍺</strong>
+                            <span>Chopp gelado</span>
+                        </div>
+
+                        <div>
+                            <strong>🔥</strong>
+                            <span>Espetinhos na brasa</span>
+                        </div>
+
+                        <div>
+                            <strong>🎶</strong>
+                            <span>Boa resenha</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="hero-bear">
+                    <div class="beer-glow"></div>
+                    <div class="bear">
+                        🐻
+                    </div>
+
+                    <div class="beer-card">
+                        <span>HOJE TEM</span>
+                        <strong>CHOPP GELADO</strong>
+                        <small>Do jeito que a resenha merece</small>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- MARQUEE -->
+        <div class="marquee">
+            <div>
+                🍺 CHOPP GELADO
+                <span>•</span>
+                🔥 ESPETINHOS
+                <span>•</span>
+                🐻 CHOPP DO URSO
+                <span>•</span>
+                🍻 VEM PRA RESENHA
+                <span>•</span>
+                🍺 CHOPP GELADO
+                <span>•</span>
+                🔥 ESPETINHOS
+            </div>
+        </div>
+
+
+        <!-- CARDÁPIO -->
+        <section class="section menu-section" id="cardapio">
+
+            <div class="container">
+
+                <div class="section-title">
+                    <span>O QUE VAI SER?</span>
+                    <h2>ESCOLHA SUA <b>RESENHA</b></h2>
+                    <p>
+                        Monte seu pedido e mande direto para o nosso WhatsApp.
+                    </p>
+                </div>
+
+
+                <!-- CATEGORIAS -->
+                <div class="categories">
+
+                    <button class="category active" onclick="filtrar('todos', this)">
+                        🍽️ Tudo
+                    </button>
+
+                    <button class="category" onclick="filtrar('chopp', this)">
+                        🍺 Chopp
+                    </button>
+
+                    <button class="category" onclick="filtrar('espetinho', this)">
+                        🔥 Espetinhos
+                    </button>
+
+                    <button class="category" onclick="filtrar('porcao', this)">
+                        🍟 Porções
+                    </button>
+
+                </div>
+
+
+                <!-- PRODUTOS -->
+                <div class="products">
+
+                    <!-- CHOPP -->
+                    <article class="product-card" data-category="chopp">
+
+                        <div class="product-image beer-image">
+                            🍺
+                            <span class="product-badge">GELADO</span>
+                        </div>
+
+                        <div class="product-info">
+
+                            <div class="product-top">
+                                <div>
+                                    <h3>Chopp Pilsen</h3>
+                                    <p>Chopp leve, refrescante e bem gelado.</p>
+                                </div>
+
+                                <strong>R$ 12,00</strong>
+                            </div>
+
+                            <button onclick="adicionar('Chopp Pilsen', 12)" class="add-button">
+                                + ADICIONAR
+                            </button>
+
+                        </div>
+                    </article>
+
+
+                    <article class="product-card" data-category="chopp">
+
+                        <div class="product-image beer-image">
+                            🍻
+                            <span class="product-badge">QUERIDINHO</span>
+                        </div>
+
+                        <div class="product-info">
+
+                            <div class="product-top">
+                                <div>
+                                    <h3>Chopp Especial</h3>
+                                    <p>Mais encorpado para quem gosta de sabor.</p>
+                                </div>
+
+                                <strong>R$ 15,00</strong>
+                            </div>
+
+                            <button onclick="adicionar('Chopp Especial', 15)" class="add-button">
+                                + ADICIONAR
+                            </button>
+
+                        </div>
+                    </article>
+
+
+                    <!-- ESPETINHOS -->
+                    <article class="product-card" data-category="espetinho">
+
+                        <div class="product-image meat-image">
+                            🥩
+                        </div>
+
+                        <div class="product-info">
+
+                            <div class="product-top">
+                                <div>
+                                    <h3>Espetinho de Carne</h3>
+                                    <p>Carne temperada e preparada na brasa.</p>
+                                </div>
+
+                                <strong>R$ 10,00</strong>
+                            </div>
+
+                            <button onclick="adicionar('Espetinho de Carne', 10)" class="add-button">
+                                + ADICIONAR
+                            </button>
+
+                        </div>
+                    </article>
+
+
+                    <article class="product-card" data-category="espetinho">
+
+                        <div class="product-image meat-image">
+                            🍗
+                        </div>
+
+                        <div class="product-info">
+
+                            <div class="product-top">
+                                <div>
+                                    <h3>Espetinho de Frango</h3>
+                                    <p>Frango macio, temperado e feito na brasa.</p>
+                                </div>
+
+                                <strong>R$ 9,00</strong>
+                            </div>
+
+                            <button onclick="adicionar('Espetinho de Frango', 9)" class="add-button">
+                                + ADICIONAR
+                            </button>
+
+                        </div>
+                    </article>
+
+
+                    <article class="product-card" data-category="espetinho">
+
+                        <div class="product-image meat-image">
+                            🧀
+                        </div>
+
+                        <div class="product-info">
+
+                            <div class="product-top">
+                                <div>
+                                    <h3>Espetinho de Queijo</h3>
+                                    <p>Queijo douradinho e preparado na brasa.</p>
+                                </div>
+
+                                <strong>R$ 9,00</strong>
+                            </div>
+
+                            <button onclick="adicionar('Espetinho de Queijo', 9)" class="add-button">
+                                + ADICIONAR
+                            </button>
+
+                        </div>
+                    </article>
+
+
+                    <!-- PORÇÕES -->
+                    <article class="product-card" data-category="porcao">
+
+                        <div class="product-image fries-image">
+                            🍟
+                        </div>
+
+                        <div class="product-info">
+
+                            <div class="product-top">
+                                <div>
+                                    <h3>Batata Frita</h3>
+                                    <p>Porção crocante para acompanhar o chopp.</p>
+                                </div>
+
+                                <strong>R$ 25,00</strong>
+                            </div>
+
+                            <button onclick="adicionar('Batata Frita', 25)" class="add-button">
+                                + ADICIONAR
+                            </button>
+
+                        </div>
+                    </article>
+
+
+                    <article class="product-card" data-category="porcao">
+
+                        <div class="product-image fries-image">
+                            🧅
+                        </div>
+
+                        <div class="product-info">
+
+                            <div class="product-top">
+                                <div>
+                                    <h3>Porção do Urso</h3>
+                                    <p>Uma porção especial para dividir com a galera.</p>
+                                </div>
+
+                                <strong>R$ 35,00</strong>
+                            </div>
+
+                            <button onclick="adicionar('Porção do Urso', 35)" class="add-button">
+                                + ADICIONAR
+                            </button>
+
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- PROMO -->
+        <section class="promo">
+
+            <div class="container promo-content">
+
+                <div>
+                    <span>🐻 OFERTA DO URSO</span>
+
+                    <h2>
+                        CHOPP + ESPETINHO
+                        <b>É A COMBINAÇÃO PERFEITA</b>
+                    </h2>
+
+                    <p>
+                        Chame a galera e venha aproveitar a noite no Chopp do Urso.
+                    </p>
+                </div>
+
+                <a href="#cardapio" class="primary-button">
+                    MONTAR PEDIDO →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOBRE -->
+        <section class="section about" id="sobre">
+
+            <div class="container about-grid">
+
+                <div class="about-visual">
+                    <div class="about-circle">
+                        🐻
+                    </div>
+
+                    <span class="about-label">
+                        DESDE<br>
+                        <b>2026</b>
+                    </span>
+                </div>
+
+
+                <div class="about-text">
+
+                    <span class="eyebrow">SOBRE O CHOPP DO URSO</span>
+
+                    <h2>
+                        NÃO É SÓ UM BAR.
+                        <b>É A RESENHA.</b>
+                    </h2>
+
+                    <p>
+                        O Chopp do Urso nasceu para ser aquele lugar onde você
+                        chega para tomar um chopp e acaba ficando pela companhia,
+                        pela comida e pela boa conversa.
+                    </p>
+
+                    <p>
+                        Chopp gelado, espetinhos preparados na brasa e um ambiente
+                        feito para aproveitar bons momentos.
+                    </p>
+
+                    <div class="about-features">
+
+                        <div>
+                            <strong>🍺</strong>
+                            <span>Chopp sempre gelado</span>
+                        </div>
+
+                        <div>
+                            <strong>🔥</strong>
+                            <span>Espetinhos na brasa</span>
+                        </div>
+
+                        <div>
+                            <strong>❤️</strong>
+                            <span>Feito para a galera</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta" id="contato">
+
+            <div class="container">
+
+                <span>🐻 E AÍ, VAI FICAR SÓ OLHANDO?</span>
+
+                <h2>
+                    VEM PRA
+                    <b>RESENHA</b>
+                </h2>
+
+                <p>
+                    Faça seu pedido pelo WhatsApp.
+                </p>
+
+                <a href="#" onclick="abrirWhatsApp()" class="primary-button">
+                    PEDIR PELO WHATSAPP 🍺
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- CARRINHO -->
+    <aside class="cart" id="cart">
+
+        <div class="cart-header">
+
+            <div>
+                <span>SEU PEDIDO</span>
+                <h3>🛒 Carrinho</h3>
+            </div>
+
+            <button onclick="fecharCarrinho()">✕</button>
+
+        </div>
+
+
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <span>🐻</span>
+                <p>Seu carrinho está vazio</p>
+                <small>Escolha alguma coisa no cardápio</small>
+            </div>
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="total">
+                <span>TOTAL</span>
+                <strong id="total">R$ 0,00</strong>
+            </div>
+
+            <button onclick="finalizarPedido()" class="checkout-button">
+                FINALIZAR PEDIDO →
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- BOTÃO FLUTUANTE -->
+    <button class="floating-cart" onclick="abrirCarrinho()">
+        🛒
+        <span id="cartCount">0</span>
+    </button>
+
+
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay" onclick="fecharCarrinho()"></div>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+                    <span class="logo-icon">🐻</span>
+
+                    <span>
+                        CHOPP<br>
+                        <b>DO URSO</b>
+                    </span>
+                </div>
+
+                <p>
+                    Chopp gelado, espetinhos e muita resenha.
+                </p>
+
+            </div>
+
+
+            <div>
+                <h4>NAVEGAÇÃO</h4>
+
+                <a href="#inicio">Início</a>
+                <a href="#cardapio">Cardápio</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+            </div>
+
+
+            <div>
+                <h4>CONTATO</h4>
+
+                <p>📱 WhatsApp</p>
+                <p>📍 Sua cidade - PR</p>
+                <p>⏰ Consulte nossos horários</p>
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            <p>
+                © <span id="ano"></span> Chopp do Urso — Todos os direitos reservados
+            </p>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
